@@ -1,4 +1,4 @@
-document.getElementById('calculateBtn').addEventListener('click', function() {
+document.getElementById('calculateAgeBtn').addEventListener('click', function() {
   const birthdateInput = document.getElementById('birthdate').value;
   const resultDiv = document.getElementById('result');
 
