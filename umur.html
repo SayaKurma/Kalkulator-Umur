@@ -3,18 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kalkulator Umur</title>
+  <title>Hitung Umur & Waktu | Kurma Calc</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Kalkulator Umur</h1>
-    <label for="birthdate">Tanggal Lahir:</label>
-    <input type="date" id="birthdate">
-    <button id="calculateAgeBtn">Hitung Umur</button>
-    <div id="result" class="result"></div>
-    <div class="back">
-      <a href="index.html">← Kembali ke Menu Utama</a>
+  <div class="math-paper">
+    <div class="container">
+      <h1><i class="fas fa-birthday-cake"></i> Kalkulator Umur</h1>
+      
+      <div class="input-group">
+        <div class="math-equation">t<sub>umur</sub> = t<sub>sekarang</sub> - t<sub>lahir</sub></div>
+        
+        <div class="form-field">
+          <label for="birthdate"><i class="fas fa-calendar-alt"></i> Tanggal Lahir:</label>
+          <input type="date" id="birthdate" class="math-input">
+        </div>
+        
+        <button id="calculateAgeBtn" class="math-button">
+          <i class="fas fa-equals"></i> Hitung Umur
+        </button>
+      </div>
+      
+      <div id="result" class="result">
+        <div class="result-placeholder">Hasil akan muncul di sini</div>
+      </div>
+      
+      <div class="back">
+        <a href="index.html"><i class="fas fa-arrow-left"></i> Kembali ke Menu Utama</a>
+      </div>
+      
+      <div class="math-footer">
+        <div class="math-symbols">
+          <span>π</span>
+          <span>∑</span>
+          <span>√</span>
+          <span>∫</span>
+          <span>∞</span>
+        </div>
+      </div>
     </div>
   </div>
   <script src="script-umur.js"></script>
