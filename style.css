@@ -16,20 +16,43 @@ body {
   padding: 20px;
   width: 100%;
   max-width: 400px;
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
   color: #333;
+  margin-bottom: 20px;
+}
+
+.menu {
+  padding: 40px 20px;
+}
+
+.menu-item {
+  margin: 10px 0;
+}
+
+.menu-item a {
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.menu-item a:hover {
+  background-color: #0056b3;
 }
 
 label {
   display: block;
-  margin-bottom: 8px;
+  margin: 10px 0 5px;
   font-weight: bold;
 }
 
-input[type="date"] {
+input[type="date"],
+input[type="time"] {
   width: 100%;
   padding: 8px;
   margin-bottom: 12px;
@@ -55,11 +78,23 @@ button:hover {
 
 .result {
   margin-top: 20px;
-  text-align: center;
   font-size: 18px;
   padding: 10px;
   background: #e9ecef;
   border-radius: 4px;
+}
+
+.back {
+  margin-top: 20px;
+}
+
+.back a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.back a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 480px) {
