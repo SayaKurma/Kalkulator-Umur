@@ -1,107 +1,300 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
+
+:root {
+  --color-primary: #3f51b5;
+  --color-primary-light: #757de8;
+  --color-primary-dark: #002984;
+  --color-accent: #ff4081;
+  --color-text: #37474f;
+  --color-text-light: #78909c;
+  --color-background: #f5f5f5;
+  --color-white: #ffffff;
+  --color-grid: #e0e0e0;
+  --color-success: #4caf50;
+  --color-success-dark: #388e3c;
+  --color-paper: #fffdf7;
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+  line-height: 1.6;
+}
+
+.math-paper {
+  background-color: var(--color-paper);
+  background-image: linear-gradient(var(--color-grid) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: -2px -2px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.math-paper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-accent);
 }
 
 .container {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 20px;
   width: 100%;
-  max-width: 400px;
-  text-align: center;
 }
 
 h1 {
-  color: #333;
-  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-primary-dark);
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 28px;
+  position: relative;
+  padding-bottom: 15px;
 }
 
-.menu {
-  padding: 40px 20px;
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.math-quote {
+  text-align: center;
+  font-style: italic;
+  color: var(--color-text-light);
+  margin-bottom: 30px;
+  font-size: 14px;
+  padding: 0 20px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 30px 0;
 }
 
 .menu-item {
-  margin: 10px 0;
+  margin: 0;
 }
 
 .menu-item a {
-  display: block;
-  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
   text-decoration: none;
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 4px;
+  background-color: var(--color-white);
+  color: var(--color-text);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .menu-item a:hover {
-  background-color: #0056b3;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary-light);
+}
+
+.menu-icon {
+  font-size: 24px;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.menu-title {
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.menu-desc {
+  font-size: 12px;
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+.input-group {
+  background-color: var(--color-white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.math-equation {
+  background-color: rgba(63, 81, 181, 0.05);
+  padding: 10px 15px;
+  border-radius: 4px;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  margin-bottom: 20px;
+  color: var(--color-primary-dark);
+  font-size: 18px;
+  border-left: 3px solid var(--color-primary);
+}
+
+.form-field {
+  margin-bottom: 15px;
 }
 
 label {
   display: block;
-  margin: 10px 0 5px;
-  font-weight: bold;
+  margin-bottom: 8px;
+  color: var(--color-text);
+  font-weight: 500;
 }
 
-input[type="date"],
-input[type="time"] {
+.math-input {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 12px;
-  border: 1px solid #ccc;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+  transition: border 0.3s;
 }
 
-button {
+.math-input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.2);
+}
+
+.math-button {
   width: 100%;
-  background-color: #28a745;
+  background-color: var(--color-success);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 12px;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 500;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
-button:hover {
-  background-color: #218838;
+.math-button:hover {
+  background-color: var(--color-success-dark);
+}
+
+.math-button i {
+  font-size: 18px;
 }
 
 .result {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  padding: 20px;
   margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 18px;
-  padding: 10px;
-  background: #e9ecef;
-  border-radius: 4px;
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.result-placeholder {
+  color: var(--color-text-light);
+  font-size: 14px;
+  font-style: italic;
 }
 
 .back {
-  margin-top: 20px;
+  text-align: center;
+  margin-top: 25px;
 }
 
 .back a {
   text-decoration: none;
-  color: #007bff;
+  color: var(--color-primary);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s;
 }
 
 .back a:hover {
-  text-decoration: underline;
+  color: var(--color-primary-dark);
 }
 
-@media (max-width: 480px) {
+.math-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.math-symbols {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.math-symbols span {
+  font-size: 20px;
+  color: var(--color-text-light);
+  opacity: 0.7;
+  font-family: 'Times New Roman', serif;
+}
+
+@media (max-width: 600px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
   h1 {
     font-size: 24px;
   }
+  
+  .math-paper {
+    padding: 20px 15px;
+  }
+  
   .result {
+    font-size: 16px;
+    min-height: 60px;
+  }
+  
+  .math-equation {
     font-size: 16px;
   }
 }
