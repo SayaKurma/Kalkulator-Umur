@@ -3,20 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kalkulator Waktu</title>
+  <title>Kalkulator Waktu | Kurma Calc</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Kalkulator Waktu</h1>
-    <label for="startTime">Waktu Mulai:</label>
-    <input type="time" id="startTime">
-    <label for="endTime">Waktu Selesai:</label>
-    <input type="time" id="endTime">
-    <button id="calculateTimeBtn">Hitung Durasi</button>
-    <div id="timeResult" class="result"></div>
-    <div class="back">
-      <a href="index.html">← Kembali ke Menu Utama</a>
+  <div class="math-paper">
+    <div class="container">
+      <h1><i class="fas fa-hourglass-half"></i> Kalkulator Waktu</h1>
+      
+      <div class="input-group">
+        <div class="math-equation">Δt = t<sub>selesai</sub> - t<sub>mulai</sub></div>
+        
+        <div class="form-field">
+          <label for="startTime"><i class="fas fa-play"></i> Waktu Mulai:</label>
+          <input type="time" id="startTime" class="math-input">
+        </div>
+        
+        <div class="form-field">
+          <label for="endTime"><i class="fas fa-stop"></i> Waktu Selesai:</label>
+          <input type="time" id="endTime" class="math-input">
+        </div>
+        
+        <button id="calculateTimeBtn" class="math-button">
+          <i class="fas fa-equals"></i> Hitung Durasi
+        </button>
+      </div>
+      
+      <div id="timeResult" class="result">
+        <div class="result-placeholder">Hasil akan muncul di sini</div>
+      </div>
+      
+      <div class="back">
+        <a href="index.html"><i class="fas fa-arrow-left"></i> Kembali ke Menu Utama</a>
+      </div>
+      
+      <div class="math-footer">
+        <div class="math-symbols">
+          <span>π</span>
+          <span>∑</span>
+          <span>√</span>
+          <span>∫</span>
+          <span>∞</span>
+        </div>
+      </div>
     </div>
   </div>
   <script src="script-waktu.js"></script>
